@@ -5,13 +5,12 @@
   <h2 class="govuk-error-summary__title">
     {{ params.titleHtml | safe if params.titleHtml else params.titleText }}
   </h2>
-  <div class="govuk-error-summary__body">
-    {% if params.descriptionHtml or params.descriptionText %}
-    <p>
+  {% if params.descriptionHtml or params.descriptionText %}
+    <p class="govuk-error-summary__body">
       {{ params.descriptionHtml | safe if params.descriptionHtml else params.descriptionText }}
     </p>
-    {% endif %}
-    <ul class="govuk-list govuk-error-summary__list">
+  {% endif %}
+  <ul class="govuk-list govuk-error-summary__list">
     {% for item in params.errorList %}
       <li>
       {% if item.href %}
@@ -21,6 +20,5 @@
       {% endif %}
       </li>
     {% endfor %}
-    </ul>
-  </div>
+  </ul>
 </div>

@@ -20,13 +20,11 @@
     @include govuk-responsive-margin(4, "bottom");
   }
 
-  .govuk-error-summary__body {
+  .govuk-error-summary__body,
+  .govuk-error-summary__body p {
     @include govuk-font($size: 19);
-
-    p {
-      margin-top: 0;
-      @include govuk-responsive-margin(4, "bottom");
-    }
+    @include govuk-responsive-margin(4, "bottom");
+    margin-top: 0;
   }
 
   // Cross-component class - adjusts styling of list component

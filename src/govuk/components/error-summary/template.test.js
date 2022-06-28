@@ -64,7 +64,7 @@ describe('Error-summary', () => {
 
     it('renders description text', () => {
       const $ = render('error-summary', examples.description)
-      const summaryDescription = $('.govuk-error-summary__body p').text().trim()
+      const summaryDescription = $('.govuk-error-summary__body').text().trim()
 
       expect(summaryDescription).toEqual('Lorem ipsum')
     })
@@ -72,14 +72,14 @@ describe('Error-summary', () => {
     it('allows description text to be passed whilst escaping HTML entities', () => {
       const $ = render('error-summary', examples['html as descriptionText'])
 
-      const summaryDescription = $('.govuk-error-summary__body p').html().trim()
+      const summaryDescription = $('.govuk-error-summary__body').html().trim()
       expect(summaryDescription).toEqual('See errors below (&#x25BC;)')
     })
 
     it('allows description HTML to be passed un-escaped', () => {
       const $ = render('error-summary', examples['description html'])
 
-      const summaryDescription = $('.govuk-error-summary__body p').html().trim()
+      const summaryDescription = $('.govuk-error-summary__body').html().trim()
       expect(summaryDescription).toEqual('See <span>errors</span> below')
     })
 
